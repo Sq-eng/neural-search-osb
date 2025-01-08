@@ -1,0 +1,20 @@
+{% import "benchmark.helpers" as benchmark with context %}
+{
+    "name": "beir-query-sage-maker",
+    "default": false,
+    "schedule": [
+        {
+            "operation": {
+                "name": "neural search",
+                "operation-type": "search",
+                "index": "scifact",
+                "data_set_path": "datasets/transformed/trec-covid/scifact_sparse.json",
+                "fields_to_excluded" : ["text_sparse"]
+            },
+            "clients": 10,
+            "detailed-results": false,
+            "warmup-iterations": 100,
+            "iterations": 1000
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{% import "benchmark.helpers" as benchmark with context %}
+{
+    "name": "beir-query-sage-maker",
+    "default": false,
+    "schedule": [
+        {
+            "operation": {
+                "name": "neural search",
+                "operation-type": "search",
+                "index": "{{ index_name }}",
+                "param-source": "neural-search-query-params-source",
+                "data_set_path": "{{ query_data_set_path }}",
+                "fields_to_excluded" : ["text_sparse"]
+            },
+            "clients": 1,
+            "detailed-results": false,
+            "warmup-iterations": 100,
+            "iterations": 100,
+            "target-throughput": 2
+        }
+    ]
+}

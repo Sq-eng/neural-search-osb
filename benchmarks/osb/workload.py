@@ -190,7 +190,7 @@ class QueryNeuralSearchParamsSource:
 
         if self.query_count_of_client >= self.queries_per_client:
             print("Stopping iteration for client {} ".format(self.current))
-            raise StopIteration
+            self.query_count_of_client = 0
 
         query = json.loads(self.query_data_file.read_line(self.offset + self.query_count_of_client).strip())
         self.query_count_of_client += 1

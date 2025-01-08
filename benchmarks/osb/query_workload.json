@@ -1,13 +1,13 @@
 {% import "benchmark.helpers" as benchmark with context %}
 {
     "version": 2,
-    "description": "Trec Covid Workload Testing",
+    "description": "Beir Workload Testing",
     "indices": [
         {
-            "name": "{{ index_name }}",
+            "name": "ivf-index",
             "body": "{{ index_body }}"
         }
     ],
-    "operations": {{ benchmark.collect(parts="operations/*.json") }},
-    "test_procedures": [{{ benchmark.collect(parts="procedures/test-trec-covid-query.json") }}]
+    "test_procedures": [{{ benchmark.collect(parts="procedures/test-scifact-knn-query.json") }}],
+    "operations": {{ benchmark.collect(parts="operations/*.json") }}
 }

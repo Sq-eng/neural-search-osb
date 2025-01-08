@@ -1,0 +1,4 @@
+{
+  "index_name": "scifact",
+  "query_data_set_path" : "datasets/transformed/trec-covid/queries-local.json"
+}
